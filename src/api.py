@@ -1,6 +1,7 @@
 import requests
 import json
 import csv
+from utils import dict_to_csv
 
 def storesByAddr(address, save_path):
 
@@ -14,12 +15,7 @@ def storesByAddr(address, save_path):
 
     stores = json_output['stores']
 
-    keys = stores[0].keys()
-
-    with open(f'{save_path}', 'w', newline='') as output_file:
-        dict_writer = csv.DictWriter(output_file, keys)
-        dict_writer.writeheader()
-        dict_writer.writerows(stores)
+    dict_to_csv(stores, save_path)
 
 
 def storesByGeo(lat, lng, m, save_path):
@@ -33,9 +29,5 @@ def storesByGeo(lat, lng, m, save_path):
     json_output = json.loads(output.text)
 
     stores = json_output['stores']
-    keys = stores[0].keys()
 
-    with open(f'{save_path}', 'w', newline='') as output_file:
-        dict_writer = csv.DictWriter(output_file, keys)
-        dict_writer.writeheader()
-        dict_writer.writerows(stores)
+    dict_to_csv(stores, save_path)
