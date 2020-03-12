@@ -1,3 +1,6 @@
-## Public Mask Info with Python
+### Public Mask Info with Python
 
-gitignore 추가
+
+
+### 참고
+- [공적 마스크 판매 정보](https://www.data.go.kr/dataset/15043025/openapi.do)
