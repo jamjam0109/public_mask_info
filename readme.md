@@ -6,7 +6,7 @@ pip install requests
 
 
 ```python
-from api import storesByAddr, storesByGeo
+from api import storesByAddr
 
 # 주소 기반
 address = '경기도 성남시 분당구 야탑동'
@@ -16,7 +16,7 @@ storesByAddr(address, save_path)
 ```
 
 ```python
-from api import storesByAddr, storesByGeo
+from api import storesByGeo
 
 # 위도/경도 기반
 lat = 37.411975
